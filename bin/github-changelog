@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+var
+  program = require('commander'),
+  version = require('../').version,
+  Changelog = require('../').Changelog;
+
+program
+  .version(version)
+  .usage('[options] [user/repo]')
+  .option('-h, --host [host]', 'Use GitHub enterprise with the specified host')
+  .option('-p, --prefix [prefix]', 'Use [prefix] to reach the API')
+  .option('-s, --secure', 'Use https instead of http')
+  .option('-t, --title [title]', 'Set the title')
+  .option('-o, --token [token]', 'Set the OAuth token')
+  .option('-S, --no-ssl-check', 'Skip the SSL check')
+  .option('-d, --debug', 'Turn on debug mode')
+  .parse(process.argv);
+
+if (!program.args.length) program.help();
+
+var userRepo = program.args[0].match(/([^/]+)\/([^/]+)$/);
+if (!userRepo) program.help();
+
+program.user = userRepo[1];
+program.repo = userRepo[2];
+
+var changelog = new Changelog(program);
+changelog.create(function _changeLogCreated(err, data) {
+  if (err) return console.error('Could not create changelog: ' + err);
+
+  console.log(data);
+});
+
+// vim: set ft=javascript:
