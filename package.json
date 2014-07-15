@@ -1,14 +1,14 @@
 {
-  "name": "github-changelog",
+  "name": "github-conventional-changelog",
   "version": "0.0.1",
-  "description": "Generate a markdown changelog from git commit metadata",
+  "description": "Generate a markdown changelog from git pull-requests",
   "author": "KARASZI István <github@spam.raszi.hu> (http://raszi.hu/)",
   "main": "index",
   "bin": {
-    "github-changelog": "bin/github-changelog"
+    "github-conventional-changelog": "bin/github-conventional-changelog"
   },
   "keywords": [
-    "changelog"
+    "changelog", "github", "pull-request"
   ],
   "licenses": [
     {
