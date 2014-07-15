@@ -8,7 +8,7 @@
     "github-conventional-changelog": "bin/github-conventional-changelog"
   },
   "keywords": [
-    "changelog", "github", "pull-request"
+    "changelog", "github", "pull-request", "conventional", "conventional-changelog"
   ],
   "licenses": [
     {
