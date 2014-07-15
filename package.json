@@ -1,6 +1,6 @@
 {
   "name": "github-conventional-changelog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate a markdown changelog from git pull-requests",
   "author": "KARASZI István <github@spam.raszi.hu> (http://raszi.hu/)",
   "main": "index",
