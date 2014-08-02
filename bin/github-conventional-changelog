@@ -17,7 +17,6 @@ program
   .option('-S, --no-ssl-check', 'Skip the SSL check')
   .option('-d, --debug', 'Turn on debug mode')
   .option('-i, --ignore', 'Ignore non-existing pull-requests')
-  .option('-B, --branch [branch]', 'Use branch instead of master')
   .parse(process.argv);
 
 if (program.args.length !== 2) program.help();
