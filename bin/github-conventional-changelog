@@ -7,7 +7,7 @@ var
 
 program
   .version(version)
-  .usage('[options] [user/repo]')
+  .usage('[options] [user/repo] [repo]')
   .option('-h, --host [host]', 'Use GitHub enterprise with the specified host')
   .option('-b, --base [host]', 'Use GitHub base host')
   .option('-p, --prefix [prefix]', 'Use [prefix] to reach the API')
@@ -16,15 +16,19 @@ program
   .option('-o, --token [token]', 'Set the OAuth token')
   .option('-S, --no-ssl-check', 'Skip the SSL check')
   .option('-d, --debug', 'Turn on debug mode')
+  .option('-i, --ignore', 'Ignore non-existing pull-requests')
+  .option('-B, --branch [branch]', 'Use branch instead of master')
   .parse(process.argv);
 
-if (!program.args.length) program.help();
+if (program.args.length !== 2) program.help();
 
 var userRepo = program.args[0].match(/([^/]+)\/([^/]+)$/);
-if (!userRepo) program.help();
+var repository = program.args[1];
+if (!userRepo || !repository) program.help();
 
 program.user = userRepo[1];
 program.repo = userRepo[2];
+program.localRepo = repository;
 
 var changelog = new Changelog(program);
 changelog.create(function _changeLogCreated(err, data) {
