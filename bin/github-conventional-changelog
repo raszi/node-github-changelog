@@ -18,6 +18,7 @@ program
   .option('-d, --debug', 'Turn on debug mode')
   .option('-i, --ignore', 'Ignore non-existing pull-requests')
   .option('-l, --last', 'Generate only the last')
+  .option('-U, --skip-upcoming', 'Skip upcoming version')
   .parse(process.argv);
 
 if (program.args.length !== 2) program.help();
