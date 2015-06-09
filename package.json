@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "async": "~0.9.0",
-    "conventional-changelog": "~0.0.11",
+    "conventional-changelog": "0.0.11",
     "commander": "~2.2.0",
     "github": "~0.2.3",
     "lodash": "~2.4.1"
