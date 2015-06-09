@@ -10,12 +10,7 @@
   "keywords": [
     "changelog", "github", "pull-request", "conventional", "conventional-changelog"
   ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
-  ],
+  "licenses": "MIT",
   "repository": {
     "type": "git",
     "url":  "git://github.com/raszi/node-github-conventional-changelog.git"
